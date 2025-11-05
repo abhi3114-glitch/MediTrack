@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* ===================================
+   BASE THEME VARIABLES
+=================================== */
+:root {
+  --background: #0a1124;
+  --foreground: #e0e0e0;
+  --accent-cyan: #00e5ff;
+  --accent-pink: #ff4081;
+  --accent-green: #00e676;
+  --accent-red: #ff1744;
+  --accent-yellow: #ffd54f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #060b17;
+    --foreground: #ffffff;
+  }
+}
+
+/* ===================================
+   GLOBAL BODY STYLING
+=================================== */
+body {
+  background: radial-gradient(circle at 40% 40%, #0c162c 0%, #000 100%);
+  color: var(--foreground);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep layout centered and clean */
+.main-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    padding: 1rem;
+  }
+}
+
+/* ===================================
+   HOLOGRAPHIC PANEL STYLE
+=================================== */
+.holo {
+  backdrop-filter: blur(12px);
+  background: rgba(15, 25, 45, 0.35);
+  border: 1px solid rgba(0, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.08);
+  border-radius: 18px;
+  transition: all 0.25s ease-in-out;
+}
+
+.holo:hover {
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.holo-lite {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.08);
+  transition: 0.3s ease;
+}
+
+/* ===================================
+   TEXT AND STATUS BADGES
+=================================== */
+.text-glow {
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+.status-fatal {
+  background: linear-gradient(90deg, #ff1744, #ff5252);
+  box-shadow: 0 0 10px rgba(255, 23, 68, 0.5);
+  border-radius: 10px;
+}
+
+.status-normal {
+  background: linear-gradient(90deg, #00e676, #00b0ff);
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
+  border-radius: 10px;
+}
+
+/* ===================================
+   STAT CARDS
+=================================== */
+.stat-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #101829;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.05);
+  transition: 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(0, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+h1, h2 {
+  letter-spacing: 0.5px;
+}
+
+/* ===================================
+   ANIMATIONS
+=================================== */
+.fadeIn {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   SCROLLBAR + MISC
+=================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 255, 0.3);
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 255, 0.3) rgba(0, 0, 0, 0.3);
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffff, #0088ff);
+  border-radius: 8px;
+}
+
+/* ===================================
+   ELEMENT ANIMATIONS
+=================================== */
+.live-change {
+  transition: all 0.3s ease-in-out;
+}
+
+/* ===================================
+   FOOTER CREDIT
+=================================== */
+.footer-credit {
+  margin-top: 1rem;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: rgba(180, 180, 180, 0.8);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.footer-credit:hover {
+  color: var(--accent-cyan);
+}
