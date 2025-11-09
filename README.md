@@ -176,4 +176,4 @@ Open [http://localhost:3000](http://localhost:3000)
 ---
 
 ## 👨‍💻 Developed By
-**Abhishek Pratap Singh Chauhan**  
+**Abhishek Chauhan**  
